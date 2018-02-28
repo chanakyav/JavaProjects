@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Student {
 
+    // Private properties of class Student
     private String firstName;
     private String lastName;
     private int gradeYear;

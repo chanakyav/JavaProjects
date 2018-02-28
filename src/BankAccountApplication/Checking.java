@@ -1,12 +1,11 @@
 package BankAccountApplication;
 
 public class Checking extends Account {
-    // List properties specific to common accounts
+    // Properties specific to common accounts
     private int debitCardNum;
     private int debitCardPIN;
 
     // Constructor to initialize checking account properties
-
     public Checking(String name, String SSN, double initialDeposit) {
         super(name, SSN, initialDeposit);
         acctNumber = "2" + acctNumber;
@@ -18,12 +17,13 @@ public class Checking extends Account {
         rate = getBaseRate() * 0.15;
     }
 
-    // List methods specific to checking account
+    // Setter for debit card number and PIN
     private void setDebitCard(){
         debitCardNum = (int) (Math.random() * Math.pow(10,12));
         debitCardPIN = (int) (Math.random() * Math.pow(10,4));
     }
 
+    //  Method to show checking information
     public void showInfo(){
         System.out.println("Account Type: Checking");
         super.showInfo();

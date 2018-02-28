@@ -26,6 +26,7 @@ public abstract class Account implements IBaseRate{
 
     public abstract void setRate();
 
+    // Setter for account number
     private String setAcctNumber(){
         String lastTwoDigits = SSN.substring(SSN.length()-2, SSN.length());
         int uniqueID = index;
@@ -33,6 +34,7 @@ public abstract class Account implements IBaseRate{
         return lastTwoDigits + uniqueID + randomNumber;
     }
 
+    // Method to calculate compound interest
     public void compound(){
         double accruedInterest = balance * (rate/100);
         balance = balance + accruedInterest;
@@ -41,28 +43,33 @@ public abstract class Account implements IBaseRate{
     }
 
     // List common methods - transactions
+    // Method to depoit money
     public void deposit(double amount){
         balance = balance + amount;
         System.out.println("Depositing $" + amount);
         printBalance();
     }
 
+    // Method to withdraw money
     public void withdraw(double amount){
         balance = balance - amount;
         System.out.println("Withdrawing $" + amount);
         printBalance();
     }
 
+    // Method to transfer money
     public void transfer(String destination, double amount){
         balance = balance - amount;
         System.out.println("Transferring $" + amount + " to " + destination);
         printBalance();
     }
 
+    // Method to print balance
     public void printBalance(){
         System.out.println("Your balance is: now $" + balance);
     }
 
+    // Method to show account information
     public void showInfo(){
         System.out.println("Name: " + name +
                             "\nAccount Number: " + acctNumber +

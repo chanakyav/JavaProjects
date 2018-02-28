@@ -6,7 +6,6 @@ public class Savings extends Account {
     private int safetyDepositBoxKey;
 
     // Constructor to initialize setting for the savings properties
-
     public Savings(String name, String SSN, double initialDeposit) {
         super(name, SSN, initialDeposit);
         acctNumber = "1" + acctNumber;
@@ -18,12 +17,13 @@ public class Savings extends Account {
         rate = getBaseRate() - 0.25;
     }
 
+    // Setter for safety deposit key and ID
     private void setSafetyDepositBox(){
         safetyDepositBoxID = (int) (Math.random() * Math.pow(10,3));
         safetyDepositBoxKey = (int) (Math.random() * Math.pow(10,4));
     }
 
-    // List any methods specific to savings account
+    //  Method to show savings information
     public void showInfo(){
         System.out.println("Account Type: Savings");
         super.showInfo();
